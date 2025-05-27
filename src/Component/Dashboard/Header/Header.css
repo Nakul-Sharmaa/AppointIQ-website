@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #5c6bc0;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px 8px 0 0;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+
+.header-icons span {
+  margin-left: 1rem;
+  cursor: pointer;
+}

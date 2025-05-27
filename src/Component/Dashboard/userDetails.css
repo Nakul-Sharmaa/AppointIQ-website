@@ -1,0 +1,129 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  grid-column: 1/-1;
+}
+
+.head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: brown;
+  width: 100%;
+  padding: 1rem;
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+.photo-container {
+  flex: 1;
+  min-width: 180px; /* fix min size for photo container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.details-scroll-container {
+  max-height: 500px; /* or whatever fits your design */
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+/* Optional scrollbar styling for better UX */
+.details-scroll-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.details-scroll-container::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+.details {
+  background-color: #f8f8f8;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 2000px;
+  display: flex;
+  align-items: center; /* vertically align image and details */
+  gap: 2rem;
+  flex-wrap: wrap; /* for mobile responsiveness */
+  margin-bottom: 20px;
+}
+
+.user-photo {
+  width: 43%;
+  height: 100px;
+  size-adjust:contain;
+  /* object-fit: cover; */
+  /* border-radius: 30%; */
+  border: 3px solid #ccc;
+  flex-shrink: 0; /* prevent image from shrinking */
+}
+
+.info-content {
+  display: flex;
+  gap: 2rem;
+  flex: 1; /* take remaining space */
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.details-text {
+  flex: 1;
+  min-width: 250px;
+}
+
+
+.action-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* ✅ Center buttons */
+  gap: 1.5rem;
+}
+
+.approve-btn,
+.disapprove-btn,.done-btn {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.approve-btn {
+  background-color: green;
+}
+.done-btn
+{
+    background-color: rgb(27, 97, 226);
+}
+
+.approve-btn:hover {
+  background-color: darkgreen;
+}
+
+.disapprove-btn {
+  background-color: red;
+}
+
+.disapprove-btn:hover {
+  background-color: darkred;
+}
+.done-btn:hover
+{
+    background-color: rgb(25, 65, 140);
+}
+.image{
+  width: 50%;
+  height: 70%;
+}
+.h4{
+  color:darkmagenta
+}

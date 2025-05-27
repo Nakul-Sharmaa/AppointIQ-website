@@ -1,0 +1,77 @@
+/* /components/WelcomeScreen.css */
+
+.welcome-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+background: linear-gradient(to bottom, #fefcfe, #bc94c6);
+
+  box-sizing: border-box;
+  height:100%
+}
+.Login{
+  margin-top: 2%;
+  width:100%;
+  align-items: flex-end;
+  justify-content: flex-end;
+  color: rgb(255, 255, 255);
+ 
+}
+.span{
+ text-decoration: underline;
+ color:#9c1fbc;
+}
+.welcome-content {
+  flex: 1;
+  text-align: center;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.welcome-content h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  color:#9c1fbc;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+ color:#9c1fbc
+}
+
+.description {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  color: #9c1fbc
+}
+
+.cta-button {
+  background-color: white;
+  color:#9c1fbc;
+  border: none;
+  border-radius: 50px;
+  padding: 0.8rem 2rem;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 2rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color:#9c1fbc;
+  color: white;
+}
+
+

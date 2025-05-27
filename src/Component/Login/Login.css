@@ -1,0 +1,132 @@
+.login-wrapper {
+  display: flex;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to left,  #ece7ed,#fefcfe);
+  color: #731981;
+}
+
+.login-left {
+  flex: 1;
+  /* background: #f8f9fa; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-illustration {
+  width: 80%;
+  max-width: 500px;
+}
+
+.login-right {
+  flex: 1;
+  /* background: #ffffff; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.login-form-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.hospital-name {
+  color: #731981;
+  margin-bottom: 0;
+}
+
+.hospital-sub {
+  margin-top: 0;
+  color: gray;
+  font-size: 0.9rem;
+}
+
+.login-subtext {
+  color: #731981;
+  margin-bottom: 1rem;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.help-link {
+  color:#731981;
+  text-decoration: none;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 0.7rem;
+  background-color: #731981;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.divider {
+  text-align: center;
+  margin: 1.5rem 0 1rem;
+  color: #888;
+  font-size: 0.9rem;
+}
+.input-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.icon-input input {
+  padding-left: 2.5rem;
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 0.8rem;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 1rem;
+}
+
+.social-login button {
+  width: 100%;
+  margin: 0.3rem 0;
+  padding: 0.6rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.google-btn {
+  background-color: #db4437;
+  color: white;
+}
+
+.twitter-btn {
+  background-color: #1da1f2;
+  color: white;
+}

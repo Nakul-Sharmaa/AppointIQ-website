@@ -3,7 +3,7 @@
   /* background-color: #9c1fbc; */
   background: linear-gradient(to bottom, #fefcfe, #bc94c6);
   height: 100vh;
-  padding: 1rem;
+  padding: 0.5rem;
   box-shadow: 1px 0 5px rgba(0,0,0,0.1);
 }
 
@@ -11,6 +11,8 @@
   font-weight: bold;
   color: #5c6bc0;
   margin-bottom: 2rem;
+  margin-top: 3rem;
+  margin-left: 1rem;
 }
 
 .profile-icon {

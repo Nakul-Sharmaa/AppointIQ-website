@@ -1,13 +1,40 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import "mdb-ui-kit/css/mdb.min.css";
 import 'mdb-ui-kit/js/mdb.es.min.js';
-import "./index.css"
+import "./index.css";
 
 export default function Navbar() {
+  const location = useLocation();
+  const [isLoggedIn, setIsLoggedIn] = useState(true); // Simulate login
+  const [imageSrc, setImageSrc] = useState("https://your-api-url.com/user-profile.jpg");
+  const dropdownRef = useRef(null);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
   useEffect(() => {
-    // MDB requires JS initialization for components
     window.mdb?.AutoInit?.();
+
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  const handleImageError = () => {
+    setImageSrc("/default-doctor-logo.jpg");
+  };
+
+  const shouldShowDoctorImage = isLoggedIn && location.pathname === "/dashboard";
+
+  const handleLogout = () => {
+    // Implement logout logic here
+    setIsLoggedIn(false);
+    window.location.href = "/login"; // or use useNavigate() from react-router-dom
+  };
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark gradient-custom">
@@ -29,27 +56,28 @@ export default function Navbar() {
                 Home
               </a>
             </li>
-            {/* Add other items similarly... */}
           </ul>
 
-          {/* Right Links */}
-         {/* Right Links */}
-<ul className="navbar-nav ms-auto d-flex flex-row mt-3 mt-lg-0">
-  <li className="nav-item text-center mx-2 mx-lg-1">
-    <a className="nav-link text-white" href="/login">
-      <i className="fas fa-sign-in-alt fa-lg mb-1 text-white"></i>
-      <br />
-      Login
-    </a>
-  </li>
-</ul>
-
-
-          {/* Search */}
-          <form className="d-flex input-group w-auto ms-lg-3 my-3 my-lg-0">
-            <input type="search" className="form-control" placeholder="Search" aria-label="Search" />
-            <button type="button" className="btn btn-outline-light">Search</button>
-          </form>
+          {/* Doctor Image with Dropdown */}
+          {shouldShowDoctorImage && (
+            <div ref={dropdownRef} className="dropdown ms-lg-3 my-3 my-lg-0">
+              <img
+                src={imageSrc}
+                alt="Doctor"
+                onError={handleImageError}
+                className="rounded-circle dropdown-toggle"
+                style={{ width: "50px", height: "50px", objectFit: "cover", cursor: "pointer" }}
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              />
+              {isDropdownOpen && (
+                <ul className="dropdown-menu show" style={{ right: 0, left: "auto" }}>
+                  <li><a className="dropdown-item" href="/profile">View Profile</a></li>
+                  <li><hr className="dropdown-divider" /></li>
+                  <li><button className="dropdown-item" onClick={handleLogout}>Logout</button></li>
+                </ul>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </nav>

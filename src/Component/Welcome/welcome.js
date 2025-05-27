@@ -1,13 +1,16 @@
 // /components/WelcomeScreen.js
-import React,{useState} from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // ⬅️ Import navigate hook
 import "./welcome.css";
 import DoctorRegistrationForm from "./Step1";
 
 const WelcomeScreen = () => {
-   const [showForm, setShowForm] = useState(false);
+  const [showForm, setShowForm] = useState(false);
+  const navigate = useNavigate(); // ⬅️ Initialize navigate
+
   return (
     <div className="welcome-container">
-      <div style={{flex:1,height:"100%",width:"30%",alignContent:"center",justifyContent:"center"}}>
+      <div style={{ flex: 1, height: "100%", width: "30%", alignContent: "center", justifyContent: "center" }}>
         {showForm ? (
           <DoctorRegistrationForm />
         ) : (
@@ -21,9 +24,17 @@ const WelcomeScreen = () => {
               SURE <span role="img" aria-label="smile">😊</span> <span className="arrow">➔</span>
             </button>
             <div className="Login">
-             <h5> Already have an account? <span className="span">
-              Login</span></h5> 
-              </div>
+              <h5>
+                Already have an account?{" "}
+                <span
+                  className="span"
+                  style={{ color: "blue", cursor: "pointer", textDecoration: "underline" }}
+                  onClick={() => navigate("/login")} // ⬅️ Redirect to login
+                >
+                  Login
+                </span>
+              </h5>
+            </div>
           </div>
         )}
       </div>
@@ -32,16 +43,15 @@ const WelcomeScreen = () => {
         className="Welcome-img"
         style={{
           flex: 1,
-          height: '100%',
+          height: "100%",
           backgroundImage: `url('/Images/nurse.png')`,
-
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          borderRadius: '8px',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          borderRadius: "8px",
         }}
       ></div>
-    </div> 
+    </div>
   );
 };
 
